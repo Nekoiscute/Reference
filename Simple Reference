@@ -1,0 +1,59 @@
+echo "# Reference" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:Nekoiscute/Reference.git
+git push -u origin master
+
+#include <iostream>
+
+using namespace std;
+
+void BadHackScore(int myScore, int champScore);
+void GoodHackScore(int& myScore, int& champScore);
+
+void main()
+{
+	cout << "\n\n\t *** Video Game ***" << endl;
+	int myScore = 237;
+	int champScore = 1000;
+	//Print out score
+	cout << "\n\nBefore Bad Hack a score is called, My Score = " << myScore << "\nThe Champs Score = " << champScore << endl;
+	//Try to hack score
+	BadHackScore(myScore, champScore);
+	//Report on a score that been hacked
+	cout << "\n\nAfter Bad Hack a score is called, My Score = " << myScore << "\nThe Champs Score = " << champScore << endl;
+	GoodHackScore(myScore, champScore);
+	//Report on a score that been hacked
+	cout << "\n\nAfter Bad Hack a score is called, My Score = " << myScore << "\nThe Champs Score = " << champScore << endl;
+	
+}
+
+void BadHackScore(int myScore, int champScore)
+{
+
+	//swap values between myscore and champscore
+	//to do this  we need a tempfriend
+	int myTempFriend = 0;
+	myTempFriend = champScore;
+	champScore = myScore;
+	myScore = myTempFriend;
+
+	cout << "\n\nIn Bad Hack a score was called, My Score = " << myScore << "\nThe Champs Score = " << champScore << endl;
+	
+	
+}
+
+void GoodHackScore(int& myScore, int& champScore)
+{
+	//swap values between myscore and champscore
+	//to do this  we need a tempfriend
+	int myTempFriend = 0;
+	myTempFriend = champScore;
+	champScore = myScore;
+	myScore = myTempFriend;
+
+	cout << "\n\nIn Good Hack a score was called, My Score = " << myScore << "\nThe Champs Score = " << champScore << endl;
+
+
+}
